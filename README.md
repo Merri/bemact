@@ -17,7 +17,7 @@ var MyComponent = React.createClass({
             <div className="parent --customized">
                 <h1 className="child-header">Main Header</h1>
                 <p className="article --pretty">
-                    I'm a pretty article <a class="link" href="">with a link</a>!
+                    I'm a pretty article <a className="link" href="">with a link</a>!
                 </p>
                 <footer>
                     <p className="untouched">I'm untouched because footer has no className.</p>
