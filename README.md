@@ -79,7 +79,7 @@ var headerClassName = classNames(
         'main-article__header--is-read': this.props.read,
         'main-article__header--is-popular': this.props.popular
     },
-    'main-article__header--' + (this.disabled ? 'disabled' : 'enabled')
+    'main-article__header--' + (this.props.disabled ? 'disabled' : 'enabled')
 )
 
 return (
@@ -101,7 +101,7 @@ var headerClassName = classNames(
         '--is-read': this.props.read,
         '--is-popular': this.props.popular
     },
-    this.disabled ? '--disabled' : '--enabled'
+    this.props.disabled ? '--disabled' : '--enabled'
 )
 
 return bem(
