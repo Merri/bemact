@@ -1,4 +1,5 @@
 # bemact
+[![Build Status](https://travis-ci.org/Merri/bemact.svg?branch=master)](https://travis-ci.org/Merri/bemact)
 
 A DRY utility for React that extends React classNames to [BEM style](https://en.bem.info/method/definitions/) with
 minimal boilerplate code. Inspired partially by ["Atomic OOBEMITSCSS"](http://www.sitepoint.com/atomic-oobemitscss/).
