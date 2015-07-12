@@ -1,4 +1,4 @@
-# bemact [![Build Status](https://travis-ci.org/Merri/bemact.svg?branch=master)](https://travis-ci.org/Merri/bemact)
+# Bemact [![Build Status](https://travis-ci.org/Merri/bemact.svg?branch=master)](https://travis-ci.org/Merri/bemact)
 
 A DRY utility for React that extends React classNames to [BEM style](https://en.bem.info/method/definitions/) with
 minimal boilerplate code. Inspired partially by ["Atomic OOBEMITSCSS"](http://www.sitepoint.com/atomic-oobemitscss/).
@@ -65,6 +65,56 @@ var bem2015 = require('bemact').bem2015
 ```
 
 The new element prefix is the same as before, but modifier prefix is a single lodash instead: `_`
+
+
+## Using with JedWatson/classnames
+
+[classNames](https://github.com/JedWatson/classnames) is one of the most popular utilities for working with CSS classes in React. Using BEM style with it can lead into quite a lot of repetition:
+
+```js
+var className = 'main-article'
+var headerClassName = classNames(
+    'main-article__header',
+    {
+        'main-article__header--is-read': this.props.read,
+        'main-article__header--is-popular': this.props.popular
+    },
+    'main-article__header--' + (this.disabled ? 'disabled' : 'enabled')
+)
+
+return (
+    <article className={className}>
+        <header className={headerClassName}>
+            ...
+        </header>
+    </article>
+)
+```
+
+Adding Bemact for post-processing eases the burden:
+
+```js
+var className = 'main-article'
+var headerClassName = classNames(
+    'header',
+    {
+        '--is-read': this.props.read,
+        '--is-popular': this.props.popular
+    },
+    this.disabled ? '--disabled' : '--enabled'
+)
+
+return bem(
+    <article className={className}>
+        <header className={headerClassName}>
+            ...
+        </header>
+    </article>
+)
+```
+
+No need to repeat yourself.
+
 
 ## Developing
 
