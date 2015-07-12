@@ -1,5 +1,4 @@
-# bemact
-[![Build Status](https://travis-ci.org/Merri/bemact.svg?branch=master)](https://travis-ci.org/Merri/bemact)
+# bemact [![Build Status](https://travis-ci.org/Merri/bemact.svg?branch=master)](https://travis-ci.org/Merri/bemact)
 
 A DRY utility for React that extends React classNames to [BEM style](https://en.bem.info/method/definitions/) with
 minimal boilerplate code. Inspired partially by ["Atomic OOBEMITSCSS"](http://www.sitepoint.com/atomic-oobemitscss/).
@@ -14,15 +13,17 @@ var bem = require('bemact').bem
 
 var MyComponent = React.createClass({
     render: function() {
-        return bem(<div className="parent --customized">
-            <h1 className="child-header">Main Header</h1>
-            <p className="article --pretty">
-                I'm a pretty article <a class="link" href="">with a link</a>!
-            </p>
-            <footer>
-                <p className="untouched">I'm untouched because footer has no className.</p>
-            </footer>
-        </div>)
+        return bem(
+            <div className="parent --customized">
+                <h1 className="child-header">Main Header</h1>
+                <p className="article --pretty">
+                    I'm a pretty article <a class="link" href="">with a link</a>!
+                </p>
+                <footer>
+                    <p className="untouched">I'm untouched because footer has no className.</p>
+                </footer>
+            </div>
+        )
     }
 })
 ```
