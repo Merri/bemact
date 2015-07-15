@@ -1,6 +1,6 @@
 {
   "name": "bemact",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Processes React element className properties to BEM style CSS classes",
   "main": "index.js",
   "scripts": {
