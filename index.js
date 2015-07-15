@@ -10,8 +10,8 @@ function BemSetup(options) {
     function bemact(reactElement, block) {
         if (typeof reactElement !== 'object'
             || typeof reactElement.type !== 'string'
-            || typeof reactElement.props !== 'object'
-            || typeof reactElement._store !== 'object') {
+            || !(typeof reactElement.props === 'object'
+            || typeof reactElement._store === 'object')) {
             return reactElement
         }
 
