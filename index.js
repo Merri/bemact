@@ -8,7 +8,8 @@ function BemSetup(options) {
         spaceAndModifierPrefix = ' ' + modifierPrefix
 
     function bemact(reactElement, block) {
-        if (typeof reactElement !== 'object'
+        if (!reactElement
+            || typeof reactElement !== 'object'
             || typeof reactElement.type !== 'string'
             || !(typeof reactElement.props === 'object'
             || typeof reactElement._store === 'object')) {
